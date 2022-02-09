@@ -6,6 +6,8 @@
 #
 # 这里 CC 和 CXX 指定了要使用的 C 和 C++ 编译器。
 #
+# 可通过 make CXX=g++ 形式覆盖
+#
 CC := clang
 CXX := clang++
 
@@ -41,6 +43,8 @@ objects := main.o
 #
 # 它的 commands 部分使用 CXX 指定的编译器将所有目标文件链接
 # 成 hello 可执行文件。
+#
+# $@ 是自动变量，表示 target 名
 #
 hello: $(objects)
 	$(CXX) -o $@ $(objects)
